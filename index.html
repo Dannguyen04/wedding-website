@@ -37,9 +37,12 @@
         <meta property="og:image:type" content="image/jpeg" />
 
         <link
-            href="https://fonts.googleapis.com/css?family=Work+Sans:400,300,600,400italic,700"
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
             rel="stylesheet"
-            type="text/css"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap"
+            rel="stylesheet"
         />
         <link
             href="https://fonts.googleapis.com/css?family=Sacramento"
@@ -48,11 +51,6 @@
         <link
             rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Engagement"
-            rel="stylesheet"
-        />
-        <link
-            rel="stylesheet"
-            href="https://fonts.googleapis.com/css?family=Sofia+Sans+Condensed"
             rel="stylesheet"
         />
 
@@ -89,24 +87,23 @@
         <div class="fh5co-loader"></div>
 
         <div id="page">
-            <nav class="fh5co-nav" role="navigation">
+            <nav class="minimalist-nav" role="navigation">
                 <div class="container">
                     <div class="row">
-                        <div class="col-xs-10 text-right menu-1">
-                            <ul>
+                        <div class="col-xs-12 text-center">
+                            <ul class="minimalist-menu">
                                 <li class="active">
-                                    <a href="index.html">Trang chủ</a>
+                                    <a href="#fh5co-header">Trang chủ</a>
                                 </li>
-                                <li class="active">
-                                    <a href="#fh5co-event">Sự kiện</a>
-                                </li>
-                                <li class="active">
-                                    <a href="#fh5co-gallery">Ảnh cưới</a>
-                                </li>
-                                <li class="active">
-                                    <a href="#fh5co-services">Khoảnh khắc</a>
+                                <li><a href="#fh5co-event">Sự kiện</a></li>
+                                <li><a href="#fh5co-gallery">Ảnh cưới</a></li>
+                                <li>
+                                    <a href="#wish-section">Gửi lời chúc</a>
                                 </li>
                             </ul>
+                            <div class="minimalist-hamburger" id="menu-toggle">
+                                <span></span><span></span><span></span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -114,39 +111,35 @@
 
             <header
                 id="fh5co-header"
-                class="fh5co-cover"
+                class="fh5co-cover minimalist-hero"
                 role="banner"
-                style="background-image: url(images/bg.jpg)"
+                style="
+                    background-image: url(images/bg.jpg);
+                    background-size: cover;
+                    background-position: center;
+                "
                 data-stellar-background-ratio="0.5"
             >
-                <div class="overlay"></div>
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-8 col-md-offset-2 text-center">
+                        <div class="col-md-12 text-center">
                             <div class="display-t">
                                 <div
                                     class="display-tc animate-box"
                                     data-animate-effect="fadeIn"
                                 >
-                                    <h1>Linh & Khang</h1>
-                                    <br />
-                                    <img
-                                        src="images/fprint.png"
-                                        alt="Linh + Khang"
-                                    />
-                                    <h2>11.10.2025</h2>
-                                    <h2>
-                                        "Cảm ơn vì đã là một nửa của cuộc đời
-                                        anh/em."
-                                    </h2>
-                                    <div class="flipTimebox">
+                                    <h1 class="minimalist-title">
+                                        Linh & Khang
+                                    </h1>
+                                    <h2 class="minimalist-date">11.10.2025</h2>
+                                    <div class="flipTimebox minimalist-clock">
                                         <div class="clock clock-fix"></div>
                                     </div>
                                     <p>
                                         <a
-                                            href="#fh5co-event"
-                                            class="btn btn-default btn-sm"
-                                            >Lưu ngày trọng đại</a
+                                            href="#wish-section"
+                                            class="btn btn-primary btn-lg minimalist-btn"
+                                            >Gửi lời chúc</a
                                         >
                                     </p>
                                 </div>
@@ -263,25 +256,146 @@
                 </div>
             </div>
 
-            <div id="fh5co-services" class="fh5co-section-gray">
+            <div id="wish-section" class="fh5co-section-gray">
                 <div class="container">
                     <div class="row animate-box">
                         <div
                             class="col-md-8 col-md-offset-2 text-center fh5co-heading"
                         >
-                            <h2>Khoảnh khắc</h2>
+                            <h2>Lời chúc</h2>
+                            <p>Chia sẻ lời chúc của bạn với chúng mình</p>
                         </div>
                     </div>
 
-                    <div class="container animate-box">
-                        <div
-                            class="fh5co-video fh5co-bg"
-                            style="background-image: url(images/img_bg_3.jpg)"
-                        >
-                            <a href="#" class="popup-vimeo"
-                                ><i class="icon-video2"></i
-                            ></a>
-                            <div class="overlay"></div>
+                    <div class="row">
+                        <div class="col-md-8 col-md-offset-2">
+                            <div class="form-wrap animate-box">
+                                <form id="wish-form">
+                                    <div class="form-group">
+                                        <label for="name">Tên của bạn *</label>
+                                        <input
+                                            type="text"
+                                            class="form-control"
+                                            id="name"
+                                            name="name"
+                                            required
+                                        />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="message">Lời chúc *</label>
+                                        <textarea
+                                            class="form-control"
+                                            id="message"
+                                            name="message"
+                                            rows="5"
+                                            placeholder="Viết lời chúc của bạn ở đây..."
+                                            required
+                                        ></textarea>
+                                    </div>
+                                    <div class="form-group text-center">
+                                        <button
+                                            type="submit"
+                                            class="btn btn-primary btn-lg"
+                                        >
+                                            GỬI LỜI CHÚC
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal for displaying wish details -->
+            <div
+                class="modal fade"
+                id="wishModal"
+                tabindex="-1"
+                role="dialog"
+                aria-labelledby="wishModalLabel"
+                aria-hidden="true"
+            >
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content wedding-card">
+                        <div class="modal-header wedding-card-header">
+                            <button
+                                type="button"
+                                class="close"
+                                data-dismiss="modal"
+                                aria-label="Close"
+                            >
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            <div class="wedding-card-title">
+                                <h2 class="modal-title" id="wishModalLabel">
+                                    Lời Chúc Cưới
+                                </h2>
+                                <div class="wedding-card-subtitle">
+                                    Linh & Khang
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-body wedding-card-body">
+                            <div class="wish-details">
+                                <!-- Wish Section -->
+                                <div class="wish-section">
+                                    <h3 class="section-title">
+                                        Lời Chúc Của
+                                        <span id="modal-name-display"></span>
+                                    </h3>
+
+                                    <div class="wish-content">
+                                        <div
+                                            class="wish-message"
+                                            id="modal-message"
+                                        ></div>
+                                    </div>
+                                </div>
+
+                                <!-- Thank You Section -->
+                                <div class="thank-you-section">
+                                    <h3 class="section-title">Lời Cảm Ơn</h3>
+                                    <div class="couple-thanks">
+                                        <div class="bride-thanks">
+                                            <div class="bride-info">
+                                                <h4>Cô Dâu - Linh</h4>
+                                                <p class="thank-message">
+                                                    "Cảm ơn bạn đã dành thời
+                                                    gian gửi lời chúc đến chúng
+                                                    mình. Những lời chúc của bạn
+                                                    sẽ là động lực để chúng mình
+                                                    xây dựng một gia đình hạnh
+                                                    phúc."
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                        <div class="groom-thanks">
+                                            <div class="groom-info">
+                                                <h4>Chú Rể - Khang</h4>
+                                                <p class="thank-message">
+                                                    "Chân thành cảm ơn bạn đã
+                                                    chia sẻ những lời chúc tốt
+                                                    đẹp. Chúng mình sẽ trân
+                                                    trọng và ghi nhớ mãi mãi.
+                                                    Hẹn gặp lại bạn trong ngày
+                                                    trọng đại!"
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer wedding-card-footer">
+                            <button
+                                type="button"
+                                class="btn btn-wedding"
+                                data-dismiss="modal"
+                            >
+                                Cảm ơn bạn
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -318,6 +432,45 @@
         <script src="js/simplyCountdown.js"></script>
         <!-- Main -->
         <script src="js/main.js"></script>
+
+        <!-- Wish Form JavaScript -->
+        <script>
+            $(document).ready(function () {
+                // Handle form submission
+                $("#wish-form").on("submit", function (e) {
+                    e.preventDefault();
+
+                    // Get form data
+                    var name = $("#name").val();
+                    var message = $("#message").val();
+
+                    // Validate required fields
+                    if (!name || !message) {
+                        alert("Vui lòng điền đầy đủ thông tin bắt buộc!");
+                        return;
+                    }
+
+                    // Populate modal with form data
+                    $("#modal-name-display").text(name);
+                    $("#modal-message").text(message);
+
+                    // Hide email container since we removed email field
+                    $("#modal-email-container").hide();
+
+                    // Show modal
+                    $("#wishModal").modal("show");
+
+                    // Clear form
+                    $("#wish-form")[0].reset();
+                });
+
+                // Handle modal close
+                $("#wishModal").on("hidden.bs.modal", function () {
+                    // Optional: Add any cleanup code here
+                });
+            });
+        </script>
+
         <center>
             Xem mã nguồn tại
             <a href="https://github.com/shyamjos/wedding-website"
